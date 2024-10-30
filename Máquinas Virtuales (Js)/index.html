@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <script src="js/clases.js"></script>
+    <script src="js/funciones.js"></script>
+    <title>Alquiler de Máquinas Virtuales</title>
+</head>
+
+<body>
+    <div id="idIngresarEnLaAplicacion">
+        <h2>INGRESAR EN LA APLICACIÓN</h2>
+        <form id="idFormularioIngreso">
+            <label for="idNombreUsuarioIngreso">Ingrese su nombre de usuario:</label>
+            <input type="text" id="idNombreUsuarioIngreso" value="ana.lopez07">
+            <br><br>
+            <label for="idContraseñaIngreso">Ingrese su contraseña:</label>
+            <input type="text" id="idContraseñaIngreso" value="Anita07">
+            <br><br>
+            <input type="button" value="Ingresar" id="idBotonIngresarEnLaApp">
+            <hr>
+        </form>
+    </div>
+    <div id="idRegistroEnLaAplicacion">
+        <h2>REGISTRO EN LA APLICACIÓN</h2>
+        <form id="idFormularioRegistro">
+            <label for="idNombreRegistro">Ingrese su nombre:</label>
+            <input type="text" id="idNombreRegistro" value="Andres">
+            <br><br>
+            <label for="idApellidoRegistro">Ingrese su apellido:</label>
+            <input type="text" id="idApellidoRegistro" value="Andres">
+            <br><br>
+            <label for="idNombreUsuarioRegistro">Ingrese su nombre de usuario:</label>
+            <input type="text" id="idNombreUsuarioRegistro" value="andres.alvarez.22">
+            <br><br>
+            <label for="idContraseñaRegistro">Ingrese su contraseña:</label>
+            <input type="text" id="idContraseñaRegistro" value="AndresAlvarez22">
+            <br><br>
+            <label for="idNumeroTarjetaCreditoRegistro">Ingrese su número de tarjeta de crédito:</label>
+            <input type="text" id="idNumeroTarjetaCreditoRegistro" value="4662401041060519">
+            <br><br>
+            <label for="idCodigoVerificacionRegistro">Ingrese su número CVC:</label>
+            <input type="number" id="idCodigoVerificacionRegistro" value="629">
+            <br><br>
+            <input type="button" value="Registrarse" id="idBotonRegistroEnLaAplicacion">
+            <hr>
+        </form>
+    </div>
+    <div id="idALquilerDeMaquinasVirtuales">
+        <h2>ALQUILER DE MÁQUINAS VIRTUALES</h2>
+        <h3>Seleccione una Máquina Virtual:</h3>
+        <input type="radio" name="alquilerMaquina" id="idAlquilerC7Small" checked>
+        <label for="idAlquilerC7Small">c7.small (costo por alquiler: U$S 20 - costo por encendido: USD 2.50)</label>
+        <br>
+        <input type="radio" name="alquilerMaquina" id="idAlquilerC7Medium">
+        <label for="idAlquilerC7Medium">c7.medium (costo por alquiler: U$S 30 - costo por encendido: USD 3.50)</label>
+        <br>
+        <input type="radio" name="alquilerMaquina" id="idAlquilerC7Large">
+        <label for="idAlquilerC7Large">c7.large (costo por alquiler: U$S 50 - costo por encendido: USD 6.00)</label>
+        <br>
+        <input type="radio" name="alquilerMaquina" id="idAlquilerR7Small">
+        <label for="idAlquilerR7Small">r7.small (costo por alquiler: U$S 35 - costo por encendido: USD 4.00)</label>
+        <br>
+        <input type="radio" name="alquilerMaquina" id="idAlquilerR7Medium">
+        <label for="idAlquilerR7Medium">r7.medium (costo por alquiler: U$S 50 - costo por encendido: USD 6.50)</label>
+        <br>
+        <input type="radio" name="alquilerMaquina" id="idAlquilerR7Large">
+        <label for="idAlquilerR7Large">r7.large (costo por alquiler: U$S 60 - costo por encendido: USD 7.00)</label>
+        <br>
+        <input type="radio" name="alquilerMaquina" id="idAlquilerI7Medium">
+        <label for="idAlquilerI7Medium">i7.medium (costo por alquiler: U$S 30 - costo por encendido: USD 3.50)</label>
+        <br>
+        <input type="radio" name="alquilerMaquina" id="idAlquilerI7Large">
+        <label for="idAlquilerI7Large">i7.large (costo por alquiler: U$S 50 - costo por encendido: USD 6.50)</label>
+        <br><br>
+        <input type="button" value="Alquilar Máquina Virtual" id="idBotonAlquilarMaquinaVirtual">
+        <hr>
+    </div>
+    <div id="idVerListadoDeMaquinasAlquiladasYSuEstado">
+        <h2>VER LISTADO DE MÁQUINAS ALQUILADAS Y SU ESTADO</h2>
+        <select name="filtroListadoMaquinasAlquiladas" id="idSelectFiltroMaquinasAlquiladas">
+            <option value="todasLasInstancias">Todas las instancias</option>
+            <option value="c7Small">c7.Small</option>
+            <option value="c7Medium">c7.Medium</option>
+            <option value="c7Large">c7.Large</option>
+            <option value="r7Small">r7Small</option>
+            <option value="r7Medium">r7Medium</option>
+            <option value="r7Large">r7Large</option>
+            <option value="i7Medium">i7Medium</option>
+            <option value="i7Large">i7Large</option>
+        </select>
+        <input type="button" value="Mostrar" id="idBotonfiltroListadoMaquinasAlquiladas">
+        <br><br>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Instancia</th>
+                    <th>Estado</th>
+                    <th>Veces iniciada</th>
+                    <th>Encender/Apagar</th>
+                </tr>
+            </thead>
+            <tbody id="idTablaListadoMaquinasAlquiladas">
+            </tbody>
+        </table>
+        <hr>
+    </div>
+    <div id="idVerCostoTotalDeAlquiler">
+        <h2>VER COSTO TOTAL DE ALQUILER</h2>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Tipo de instancia</th>
+                    <th>Costo por encendido</th>
+                    <th>Total de veces encendidas</th>
+                    <th>Costo total</th>
+                </tr>
+            </thead>
+            <tbody id="idTablaCostoTotalDeAlquiler">
+            </tbody>
+        </table>
+        <hr>
+    </div>
+    <div id="idAdministracionDeUsuarios">
+        <h2>ADMINISTRACIÓN DE USUARIOS</h2>
+        <input type="radio" id="idusuariosTotales" name="radioButtonAdmUsers" checked><label
+            for="idusuariosTotales">Todos los Usuarios</label>
+        <input type="radio" id="idusuariosPendientes" name="radioButtonAdmUsers"><label
+            for="idusuariosPendientes">Usuarios Pendientes</label>
+        <input type="radio" id="idusuariosAprobados" name="radioButtonAdmUsers"><label
+            for="idusuariosAprobados">Usuarios Aprobados</label>
+        <input type="radio" id="idusuariosBloqueados" name="radioButtonAdmUsers"><label
+            for="idusuariosBloqueados">Usuarios Bloqueados</label>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Nombre de Usuario</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Estado Actual</th>
+                    <th>Estado Futuro</th>
+                </tr>
+            </thead>
+            <tbody id="idTablaDeAdministracionDeUsuarios">
+            </tbody>
+        </table>
+        <hr>
+    </div>
+    <div id="idModificacionDeStockDeMaquinasVirtuales">
+        <h2>MODIFICACIÓN DE STOCK DE MÁQUINAS VIRTUALES</h2>
+        <h3>Stock Actual</h3>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Tipo de instancia</th>
+                    <th>Stock Disponible</th>
+                    <th>Máquinas Alquiladas</th>
+                </tr>
+            </thead>
+            <tbody id="idTablaStockDeMaquinasVirtuales">
+            </tbody>
+        </table>
+        <h3>Modificación de Stock</h3>
+        <form id="idFormularioModificarStock">
+            <label for="idTipoDeInstanciaModificacionDeStock">Tipo de Instancia:</label>
+            <select name="nombresTipoDeInstanciaModificacionDeStock" id="idTipoDeInstanciaModificacionDeStock">
+                <option value="c7.small">c7.small</option>
+                <option value="c7.medium">c7.medium</option>
+                <option value="c7.large">c7.large</option>
+                <option value="r7.small">r7.small</option>
+                <option value="r7.medium">r7.medium</option>
+                <option value="r7.large">r7.large</option>
+                <option value="i7.medium">i7.medium</option>
+                <option value="i7.large">i7.large</option>
+            </select>
+            <br>
+            <br>
+            <label for="idNuevaCantidadModificacionDeStock">Nueva Cantidad:</label>
+            <br><br>
+            <label for="idNuevaCantidadModificacionDeStock">1++</label>
+            <input type="radio" name="numerosNuevaCantidadModificacionDeStock"
+                id="idAumentoNuevaCantidadModificacionDeStock" checked>
+            <label for="idDecrementoNuevaCantidadModificacionDeStock">1--</label>
+            <input type="radio" name="numerosNuevaCantidadModificacionDeStock"
+                id="idDecrementoNuevaCantidadModificacionDeStock">
+            <br><br>
+            <input type="button" value="Modificar Stock" id="idBotonModificacionDeStock">
+            <hr>
+        </form>
+    </div>
+    <div id="idInformeDeMaquinasVirtuales">
+        <h2>INFORME DE MÁQUINAS VIRTUALES</h2>
+        <h3>Tabla de Ingresos por Tipo de Instancia</h3>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Tipo de instancia</th>
+                    <th>Cantidad en Alquiler</th>
+                    <th>Ingreso Unitario Por Instancia</th>
+                </tr>
+            </thead>
+            <tbody id="idTablaInformeDeMaquinasVirtuales">
+            </tbody>
+        </table>
+        <h3>Total de Ingresos</h3>
+        <p id="idParrafoTotalDeIngresosInformeDeMaquinasVirtuales">El costo total es:</p>
+    </div>
+    <div id="idDivSalirUser">
+        <input type="button" value="Cerrar sesión" id="idBotonSalirUser">
+    </div>
+    <div id="idDivSalirAdmin">
+        <input type="button" value="Cerrar sesión" id="idBotonSalirAdmin">
+    </div>
+</body>
+
+</html>
